@@ -7,12 +7,10 @@
   - [ ] [About Dart](https://flutterbyexample.com/lesson/about-dart)
   - [ ] [What is Dart?](https://www.youtube.com/watch?v=sOSd6G1qXoY)
   - [ ] [Dart in 100 Seconds](https://www.youtube.com/watch?v=NrO0CJCbYLA)
-  - [ ][ ]()
 
 - [ ] [DartPad]
   - [ ] [DartPad](https://dart.dev/tools/dartpad)
   - [ ] [DartPad in Tutorials](https://dart.dev/tools/dartpad/dartpad-best-practices)
-
 
 - [ ] [Built-in-Types]
   - [ ][Built-in types](https://dart.dev/language/built-in-types)
@@ -81,7 +79,7 @@
   - [ ] [Flutter – Stateful vs Stateless Widgets](https://www.geeksforgeeks.org/flutter-stateful-vs-stateless-widgets/)
   - [ ] [How to Create Stateless Widgets](https://medium.com/flutter/how-to-create-stateless-widgets-6f33931d859)
 
-- [ ] [Stateful widgets]
+- [ ] [Stateful-widgets]
   - [ ] [StatefulWidget class](https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html)
   - [ ] [Flutter – Stateful vs Stateless Widgets](https://www.geeksforgeeks.org/flutter-stateful-vs-stateless-widgets/)
   - [ ] [Flutter Tutorial - Stateful Widgets](https://www.youtube.com/watch?v=p5dkB3Mrxdo)
@@ -90,7 +88,7 @@
   - [ ] [Styling widgets in Flutter](https://docs.flutter.dev/ui/widgets/styling)
   - [ ] [Style Your Flutter Widgets](https://www.youtube.com/watch?v=kcq8AbVyMbk)
 
-  - [ ] [Material Widgets]
+- [ ] [Material Widgets]
     - [ ] [Material Components widgets](https://docs.flutter.dev/ui/widgets/material)
     - [ ] [Flutter – Material Design](https://www.geeksforgeeks.org/flutter-material-design/)
     - [ ] [Widget catalog in Flutter](https://docs.flutter.dev/ui/widgets)
@@ -110,10 +108,10 @@
   - [ ] [How to use custom fonts in Flutter](https://blog.logrocket.com/use-custom-fonts-flutter/)
 
 - [ ] [Images]
- - [ ] [Adding assets and images](https://docs.flutter.dev/ui/assets-and-images)
- - [ ] [Images in Flutter](https://docs.flutter.dev/cookbook/images)
+  - [ ] [Adding assets and images](https://docs.flutter.dev/ui/assets-and-images)
+  - [ ] [Images in Flutter](https://docs.flutter.dev/cookbook/images)
 
-- [ ] [Other File Types]
+- [ ] [Other-File-Types]
   - [ ] [File class](https://api.flutter.dev/flutter/dart-io/File-class.html)
 
 ## Version Control Systems
@@ -138,13 +136,13 @@
   - [ ] [Dependency Injection In Flutter](https://medium.com/flutter-community/dependency-injection-in-flutter-f19fb66a0740)
   - [ ] [Flutter Dependency Injection For Beginners](https://www.youtube.com/watch?v=vBT-FhgMaWM)
 
-- [ ] [Design Patterns]
+- [ ] [Design-Patterns]
   - [ ] [Flutter - Design](https://dart.dev/effective-dart/design)
   - [ ] [Design Patterns Explained in 10 Minutes](https://www.youtube.com/watch?v=tv-_1er1mWI)
   - [ ] [Cookbook Designs in Flutter](https://docs.flutter.dev/cookbook/design)
   - [ ] [Flutter Design Patterns](https://www.youtube.com/watch?v=JK6qIz0woaQ)
 
- - [ ] [SOLID Principles]
+ - [ ] [SOLID-Principles]
    - [ ] [S.O.L.I.D Principles](https://www.youtube.com/watch?v=fvNTJang7l4)
    - [ ] [Overview of S.O.L.I.D Principles In Dart](https://medium.flutterdevs.com/s-o-l-i-d-principles-in-dart-e6c0c8d1f8f1)
    - [ ] [The S.O.L.I.D Principles in Pictures](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
@@ -188,7 +186,7 @@
 - [ ] [Cloud Storage in Flutter](https://firebase.flutter.dev/docs/storage/overview/)
 
 - [ ] [SQLite]
-  - [ ] [sqflite - pub.dev package]
+  - [ ] [sqflite - pub.dev package]()
 
 - [ ] [Shared Preferences]
  - [ ] [shared_preferences - pub.dev package](https://pub.dev/packages/shared_preferences)
@@ -208,12 +206,12 @@
   - [ ] [Using Firestore - Flutter](https://www.youtube.com/watch?v=DqJ_KjFzL9I)
 
 - [ ] [Push Notifications]
-  - [ ] [How do I set up push notifications?]
+  - [ ] [How do I set up push notifications?]()
 
 - [ ] [Remote Config]
   - [ ] [Firebase Remote Config](https://www.youtube.com/watch?v=34ExOdNEMXI)
 
-- [ ] [Firebase Cloud Functions]
+- [ ] [Firebase Cloud Functions]()
 
 ## Advanced Dart
 - [ ] [Tutorials - Dart](https://dart.dev/tutorials)
@@ -291,7 +289,7 @@
   - [ ] [HeroAnimation class](https://docs.flutter.dev/ui/animations/hero-animations#heroanimation-class)
   - [ ] [Hero class](https://api.flutter.dev/flutter/widgets/Hero-class.html)
 
-  - [ ] [Opacity]
+- [ ] [Opacity]
     - [ ] [Fade a widget in and out](https://docs.flutter.dev/cookbook/animation/opacity-animation)
     - [ ] [AnimatedOpacity widget](https://docs.flutter.dev/codelabs/implicit-animations#animate-opacity-with-animatedopacity-widgets)
   
