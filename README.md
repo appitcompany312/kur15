@@ -1,9 +1,9 @@
 # Kurs 15 Roadmap
 
 ## Dart Basics
-- [x] [Dart Overview](https://dart.dev/overview)
-  - [x] [What is Dart Programming?](https://www.javatpoint.com/flutter-dart-programming)
-  - [x] [Dart Tutorial](https://www.geeksforgeeks.org/dart-tutorial)
+- [ ] [Dart Overview](https://dart.dev/overview)
+  - [ ] [What is Dart Programming?](https://www.javatpoint.com/flutter-dart-programming)
+  - [ ] [Dart Tutorial](https://www.geeksforgeeks.org/dart-tutorial)
   - [ ] [About Dart](https://flutterbyexample.com/lesson/about-dart)
   - [ ] [What is Dart?](https://www.youtube.com/watch?v=sOSd6G1qXoY)
   - [ ] [Dart in 100 Seconds](https://www.youtube.com/watch?v=NrO0CJCbYLA)
@@ -13,8 +13,8 @@
   - [ ] [DartPad in Tutorials](https://dart.dev/tools/dartpad/dartpad-best-practices)
 
 - [ ] [Built-in-Types]
-  - [ ][Built-in types](https://dart.dev/language/built-in-types)
-  - [ ][Overview of Built-in Types](https://dart.dev/guides/language/coming-from/js-to-dart#built-in-types)
+  - [ ] [Built-in types](https://dart.dev/language/built-in-types)
+  - [ ] [Overview of Built-in Types](https://dart.dev/guides/language/coming-from/js-to-dart#built-in-types)
 
 - [ ] [Variables]
   - [ ] [Variables ](https://dart.dev/language/variables)
