@@ -51,7 +51,7 @@ void main02(List<String> args) {
   var jash1 = 40;
 }
 
-void main(List<String> args) {
+void main03(List<String> args) {
   // 1: 1 {function} je bolboso bir {class} ichinde okshosh attagy ozgorulmo tuzo albaibyz
   var name = 'Name';
   String name2 = 'Name';
@@ -63,4 +63,22 @@ void main(List<String> args) {
   int mount = 1234;
   mount = 4321;
   // mount = 'Mount';
+
+  // 4 ozgormonun attary {san: 1,2,3,4,5,6,7...} bashtalbailt
+  // int 12Jash= 12;
+  // var 30Kun =30;
+  int jasg12 = 12;
+
+  // 5 ozgormonun attary keyword bolob albait
+  // String finally = 'Kurs15';
+  // int final = 34;
+}
+
+void main(List<String> args) {
+  var var01 = 'Var type';
+  // var01 = 37;
+
+  dynamic dynamic01 = 'Dynamic type';
+  dynamic01 = 37;
+  dynamic01 = false;
 }
