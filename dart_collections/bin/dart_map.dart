@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void main01(List<String> args) {
   // Map `{}` bir sozduk katary tushunsok bolot
   /* 

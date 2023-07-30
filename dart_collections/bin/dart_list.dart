@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void main01() {
   String str01 = 'Flutter 01';
   int int01 = 12;
@@ -62,5 +64,3 @@ void main(List<String> args) {
   list01.clear();
   print(list01);
 }
-
-

@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 void main01(List<String> arguments) {
   String str01 = 'Kurs15';
   print(str01);
