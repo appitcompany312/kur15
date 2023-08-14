@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -8,8 +10,6 @@ class LoginPage extends StatelessWidget {
 
   var phoneNumberController = TextEditingController();
   var emailController = TextEditingController();
-
-  // String userTelefonNomer = '';
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +64,32 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   print(phoneNumberController.text);
                   print(emailController.text);
+                  if (tuuraTelefonNomer == phoneNumberController.text && tuuraEmail == emailController.text) {
+                    Navigator.push<void>(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => const HomePage(),
+                      ),
+                    );
+                  } else {
+                    showDialog(
+                      context: context,
+                      builder: (ctx) {
+                        return AlertDialog(
+                          title: const Text("Kata boldu"),
+                          content: const Text("Email Je PhoneNumber Kata!!! Tuura jaz :) "),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              child: const Text("ok"),
+                            )
+                          ],
+                        );
+                      },
+                    );
+                  }
                 },
                 child: const Text("Login"),
               )
