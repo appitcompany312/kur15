@@ -1,3 +1,4 @@
+import 'package:dice_app/dice_game.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,21 +17,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color(0xffDA0037),
         title: const Text("Dice App"),
       ),
-      body: Center(
-        child: Row(
-          children: [
-            const SizedBox(width: 20),
-            Expanded(
-              child: Image.asset('assets/icons/dice1.png'),
-            ),
-            const SizedBox(width: 20),
-            Expanded(
-              child: Image.asset('assets/icons/dice2.png'),
-            ),
-            const SizedBox(width: 20),
-          ],
-        ),
-      ),
+      body: const HomePageBody(),
     );
   }
 }
