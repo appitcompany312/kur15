@@ -12,7 +12,7 @@ class RemoveAddCard extends StatelessWidget {
   });
 
   final String text;
-  final int value;
+  final double value;
   final void Function()? onPressedRemove;
   final void Function()? onPressedAdd;
 
@@ -32,7 +32,7 @@ class RemoveAddCard extends StatelessWidget {
               ),
             ),
             Text(
-              '$value',
+              '${value.toInt()}',
               style: const TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
