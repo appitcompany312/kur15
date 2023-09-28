@@ -15,7 +15,7 @@ class ContinentCard extends StatelessWidget {
         Navigator.push<void>(
           context,
           MaterialPageRoute<void>(
-            builder: (BuildContext context) => const HomeDetailView(),
+            builder: (BuildContext context) => HomeDetailView(continent.tests),
           ),
         );
       },

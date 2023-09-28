@@ -29,6 +29,7 @@ class HomeView extends StatelessWidget {
             indent: 15,
             endIndent: 15,
             thickness: 2,
+            height: 0,
           ),
         ),
       ),

@@ -1,16 +1,48 @@
+import 'package:capitals_game/mock/asia_test.dart';
+import 'package:capitals_game/models/question.dart';
+
 class Continent {
-  const Continent(this.name, this.imagePath);
+  const Continent({
+    required this.name,
+    required this.imagePath,
+    required this.tests,
+  });
 
   final String name;
   final String imagePath;
+  final List<Test> tests;
 }
 
-const europe = Continent('Europe', 'assets/images/europe.png');
-const asia = Continent('Asia', 'assets/images/asia.png');
-const northAmerica = Continent('North America', 'assets/images/north_america.png');
-const southAmerica = Continent('South America', 'assets/images/south_america.png');
-const africa = Continent(' Africa', 'assets/images/africa.png');
-const australia = Continent('Australia', 'assets/images/australia.png');
+const europe = Continent(
+  name: 'Europe',
+  imagePath: 'assets/images/europe.png',
+  tests: asiaTest,
+);
+const asia = Continent(
+  name: 'Asia',
+  imagePath: 'assets/images/asia.png',
+  tests: asiaTest,
+);
+const northAmerica = Continent(
+  name: 'North America',
+  imagePath: 'assets/images/north_america.png',
+  tests: asiaTest,
+);
+const southAmerica = Continent(
+  name: 'South America',
+  imagePath: 'assets/images/south_america.png',
+  tests: asiaTest,
+);
+const africa = Continent(
+  name: 'Africa',
+  imagePath: 'assets/images/africa.png',
+  tests: asiaTest,
+);
+const australia = Continent(
+  name: 'Australia',
+  imagePath: 'assets/images/australia.png',
+  tests: asiaTest,
+);
 
 const continents = [
   europe,
