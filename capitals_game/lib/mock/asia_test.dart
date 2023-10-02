@@ -90,14 +90,14 @@ const test9 = Test(
   variant4: Variant(text: 'Macau'),
 );
 
-const test10 = Test(
-  questionText: 'Mumbai',
-  imageUrl: 'https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg',
-  variant1: Variant(text: 'Pakistan'),
-  variant2: Variant(text: 'India', isTrue: true),
-  variant3: Variant(text: 'Bangladesh'),
-  variant4: Variant(text: 'Sri Lanka'),
-);
+// const test10 = Test(
+//   questionText: 'Mumbai',
+//   imageUrl: 'https://cdn.britannica.com/26/84526-050-45452C37/Gateway-monument-India-entrance-Mumbai-Harbour-coast.jpg',
+//   variant1: Variant(text: 'Pakistan'),
+//   variant2: Variant(text: 'India', isTrue: true),
+//   variant3: Variant(text: 'Bangladesh'),
+//   variant4: Variant(text: 'Sri Lanka'),
+// );
 
 const asiaTest = [
   test1,
@@ -109,5 +109,5 @@ const asiaTest = [
   test7,
   test8,
   test9,
-  test10,
+  // test10,
 ];

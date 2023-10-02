@@ -38,6 +38,7 @@ class _HomeDetailViewState extends State<HomeDetailView> {
           Text(
             widget.tests[index].questionText,
             style: const TextStyle(fontSize: 38),
+            textAlign: TextAlign.center,
           ),
           Padding(
             padding: const EdgeInsets.all(20),

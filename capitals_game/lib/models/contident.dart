@@ -1,4 +1,9 @@
+import 'package:capitals_game/mock/africa_test.dart';
 import 'package:capitals_game/mock/asia_test.dart';
+import 'package:capitals_game/mock/australia_test.dart';
+import 'package:capitals_game/mock/europe_test.dart';
+import 'package:capitals_game/mock/north_america.dart';
+import 'package:capitals_game/mock/south_america.dart';
 import 'package:capitals_game/models/question.dart';
 
 class Continent {
@@ -16,7 +21,7 @@ class Continent {
 const europe = Continent(
   name: 'Europe',
   imagePath: 'assets/images/europe.png',
-  tests: asiaTest,
+  tests: europeTest,
 );
 const asia = Continent(
   name: 'Asia',
@@ -26,22 +31,22 @@ const asia = Continent(
 const northAmerica = Continent(
   name: 'North America',
   imagePath: 'assets/images/north_america.png',
-  tests: asiaTest,
+  tests: northAmericaTest,
 );
 const southAmerica = Continent(
   name: 'South America',
   imagePath: 'assets/images/south_america.png',
-  tests: asiaTest,
+  tests: southAmericaTest,
 );
 const africa = Continent(
   name: 'Africa',
   imagePath: 'assets/images/africa.png',
-  tests: asiaTest,
+  tests: africaTest,
 );
 const australia = Continent(
   name: 'Australia',
   imagePath: 'assets/images/australia.png',
-  tests: asiaTest,
+  tests: australiaTest,
 );
 
 const continents = [
