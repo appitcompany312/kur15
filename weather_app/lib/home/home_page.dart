@@ -35,8 +35,9 @@ class _HomePageState extends State<HomePage> {
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+            stops: [0.2, 0.8],
             colors: [
               AppColors.bg01,
               AppColors.bg02,
