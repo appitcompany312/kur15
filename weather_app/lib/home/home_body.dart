@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constants/assets_const.dart';
 import 'package:weather_app/home/weather_extra.dart';
+import 'package:weather_app/model/mock_data.dart';
 import 'package:weather_app/widgets/city_time.dart';
 import 'package:weather_app/widgets/current_weather_card.dart';
 import 'package:weather_app/widgets/weather_info_cards.dart';
@@ -13,8 +14,8 @@ class HomeBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CityTimeWidget(
-          city: 'Stockholm,\nSweden',
+        CityTimeWidget(
+          city: '${(data['location'] as Map)['name']},\n${(data['location'] as Map)['country']}',
           time: 'Tue, Jun 30',
         ),
         const CurrentWetherCard(
