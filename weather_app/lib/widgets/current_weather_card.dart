@@ -17,45 +17,53 @@ class CurrentWetherCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SvgPicture.asset(icon, height: 200),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                Text(
-                  '$degree ',
-                  style: const TextStyle(
-                    fontSize: 90,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.degreeTextColor,
-                    height: 1,
+    return IntrinsicWidth(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SvgPicture.asset(icon, height: 200),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Stack(
+                children: [
+                  Text(
+                    '$degree ',
+                    style: const TextStyle(
+                      fontSize: 90,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.degreeTextColor,
+                      height: 1,
+                    ),
                   ),
-                ),
-                Positioned(
-                  right: 0,
-                  top: 0,
-                  child: SvgPicture.asset(
-                    AssetsConst.degreeSign,
-                    height: 30,
+                  Positioned(
+                    right: 0,
+                    top: 0,
+                    child: SvgPicture.asset(
+                      AssetsConst.degreeSign,
+                      height: 30,
+                    ),
                   ),
-                ),
-              ],
-            ),
-            Text(
-              '  $weatherState',
-              style: const TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.w400,
-                color: AppColors.degreeTextColor,
+                ],
               ),
-            ),
-          ],
-        ),
-      ],
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 3,
+                child: Text(
+                  '  $weatherState',
+                  overflow: TextOverflow.fade,
+                  maxLines: 1,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.degreeTextColor,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
