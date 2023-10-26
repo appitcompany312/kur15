@@ -18,7 +18,7 @@ class Weather {
   }
 }
 
-final mockWeather = Weather.fromJson(data);
+// final mockWeather = Weather.fromJson(data);
 
 // final mockWeather = Weather(
 //   current: Current(

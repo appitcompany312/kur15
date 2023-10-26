@@ -7,7 +7,9 @@ import 'package:weather_app/widgets/current_weather_card.dart';
 import 'package:weather_app/widgets/weather_info_cards.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+  const HomeBody({super.key, required this.weather});
+
+  final Weather weather;
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +17,18 @@ class HomeBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         CityTimeWidget(
-          city: '${mockWeather.location.name}\n${mockWeather.location.country}',
-          time: mockWeather.location.localtime,
+          city: '${weather.location.name}\n${weather.location.country}',
+          time: weather.location.localtime,
         ),
         CurrentWetherCard(
-          degree: '${mockWeather.current.tempC.toInt()}',
-          weatherState: mockWeather.current.condition.text,
+          degree: '${weather.current.tempC.toInt()}',
+          weatherState: weather.current.condition.text,
           icon: AssetsConst.weather05,
         ),
         WeatherInfoCards(
-          rainFallValue: '${mockWeather.current.precipMM}cm',
-          windSpeed: '${mockWeather.current.windKPH}km/h',
-          humidityPersent: '${mockWeather.current.humidity}%',
+          rainFallValue: '${weather.current.precipMM}cm',
+          windSpeed: '${weather.current.windKPH}km/h',
+          humidityPersent: '${weather.current.humidity}%',
         ),
         const SizedBox(height: 30),
         const WeatherExtra(),
