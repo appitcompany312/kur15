@@ -5,6 +5,7 @@
  
 2) https://www.youtube.com/watch?v=SmTCmDMi4BY
 
+
 3) factory method (contructor) 7 example
 4) factory method (contructor) makala
 */
