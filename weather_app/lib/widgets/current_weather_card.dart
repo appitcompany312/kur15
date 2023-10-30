@@ -21,7 +21,10 @@ class CurrentWetherCard extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset(icon, height: 200),
+          SvgPicture.asset(
+            icon,
+            height: 200,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -47,16 +50,18 @@ class CurrentWetherCard extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 3,
-                child: Text(
-                  '  $weatherState',
-                  overflow: TextOverflow.fade,
-                  maxLines: 1,
-                  style: const TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.degreeTextColor,
+              FittedBox(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width / 4,
+                  child: Text(
+                    weatherState,
+                    overflow: TextOverflow.fade,
+                    maxLines: 2,
+                    style: const TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.degreeTextColor,
+                    ),
                   ),
                 ),
               ),

@@ -8,7 +8,7 @@ import 'package:weather_app/constants/colors_cons.dart';
 import 'package:weather_app/home/home_body.dart';
 import 'package:weather_app/model/weather_model.dart';
 
-const url = 'http://api.weatherapi.com/v1/current.json?key=e9d7452a41614cdea32164320231910&q=new-york';
+const url = 'http://api.weatherapi.com/v1/current.json?key=e9d7452a41614cdea32164320231910&q=bishkek';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,28 +18,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Weather? weather;
-
-  void getWeatherData() async {
+  Future<Weather?> getWeatherData() async {
     try {
-      print(weather);
       final uri = Uri.parse(url);
       final client = Client();
       final response = await client.get(uri);
       final data = jsonDecode(response.body) as Map<String, dynamic>;
-      weather = Weather.fromJson(data);
-      setState(() {});
-      print(data);
-      print(weather);
+      final weather = Weather.fromJson(data);
+      return weather;
     } catch (e) {
-      print('Kata boldu: $e');
+      throw Exception('Bit kata boldu, kata: $e');
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getWeatherData();
   }
 
   @override
@@ -76,7 +65,26 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-          child: weather != null ? HomeBody(weather: weather!) : const CircularProgressIndicator.adaptive(),
+          child: FutureBuilder<Weather?>(
+            future: getWeatherData(),
+            builder: (context, snapshot) {
+              // `context` widget daragybyzdyn kaisyl jerinde bolgonubuzdu beret
+              // `snapshot` bizdin datanym abaly M:
+              // - kutup jatabyz,
+              // - iygiliktuu data keldi,
+              // - Error bolup data kelgen jok
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const CircularProgressIndicator.adaptive();
+              } else if (snapshot.connectionState == ConnectionState.done) {
+                if (snapshot.hasData) {
+                  return HomeBody(weather: snapshot.data!);
+                } else if (snapshot.hasError) {
+                  return Text('Bir kata boldu kata: ${snapshot.error}');
+                }
+              }
+              return const SizedBox.shrink();
+            },
+          ),
         ),
       ),
     );

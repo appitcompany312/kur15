@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/constants/assets_const.dart';
 import 'package:weather_app/home/weather_extra.dart';
 import 'package:weather_app/model/weather_model.dart';
 import 'package:weather_app/widgets/city_time.dart';
@@ -23,7 +22,7 @@ class HomeBody extends StatelessWidget {
         CurrentWetherCard(
           degree: '${weather.current.tempC.toInt()}',
           weatherState: weather.current.condition.text,
-          icon: AssetsConst.weather05,
+          icon: 'assets/weather/weather0${weather.current.condition.getWeatherIconIndex()}.svg',
         ),
         WeatherInfoCards(
           rainFallValue: '${weather.current.precipMM}cm',

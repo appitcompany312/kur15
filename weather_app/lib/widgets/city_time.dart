@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/constants/colors_cons.dart';
 
 class CityTimeWidget extends StatelessWidget {
@@ -26,7 +27,7 @@ class CityTimeWidget extends StatelessWidget {
         ),
         const SizedBox(height: 7),
         Text(
-          time,
+          getUiDateTime(),
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -35,5 +36,15 @@ class CityTimeWidget extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  String getUiDateTime() {
+    try {
+      final dateTime = DateTime.parse(time);
+      final dateTimeUI = DateFormat('MMMM d, EEEE H:m').format(dateTime);
+      return dateTimeUI;
+    } catch (e) {
+      return time;
+    }
   }
 }
