@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/constants/app_colors.dart';
-import 'package:news_app/model/news_model.dart';
+import 'package:news_app/home/article_detail_page.dart';
+import 'package:news_app/model/fake_data.dart';
 import 'package:news_app/widgets/news_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -27,20 +28,20 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(20),
-        itemCount: newsFakeList.length,
+        itemCount: fakeData.articles.length,
         itemBuilder: (context, index) {
-          print(index);
-
           return InkWell(
             onTap: () {
-              showDialog(
-                context: context,
-                builder: (context) => AlertDialog(
-                  title: Text(newsFakeList[index].title),
+              Navigator.push<void>(
+                context,
+                MaterialPageRoute<void>(
+                  builder: (BuildContext context) => ArticleDetailPage(
+                    fakeData.articles[index],
+                  ),
                 ),
               );
             },
-            child: NewsCard(newsFakeList[index]),
+            child: NewsCard(fakeData.articles[index]),
           );
         },
       ),
