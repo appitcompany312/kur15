@@ -24,7 +24,7 @@ class AtricleData {
       status: map['status'] as String,
       totalResults: map['totalResults'] as int,
       articles: List<Article>.from(
-        (map['articles'] as List<Map<String, Object?>>).map<Article>(
+        (map['articles'] as List<dynamic>).map<Article>(
           (x) => Article.fromJson(x),
         ),
       ),

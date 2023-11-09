@@ -3,19 +3,19 @@ import 'package:news_app/model/source.dart';
 class Article {
   const Article({
     required this.source,
-    required this.author,
+    this.author,
     required this.title,
-    required this.description,
+    this.description,
     required this.url,
-    required this.urlToImage,
+    this.urlToImage,
     required this.publishedAt,
-    required this.content,
+    this.content,
   });
 
   final Source source;
   final String? author;
   final String title;
-  final String description;
+  final String? description;
   final String url;
   final String? urlToImage;
   final DateTime publishedAt;
@@ -39,7 +39,7 @@ class Article {
       source: Source.fromJson(map['source'] as Map<String, dynamic>),
       author: map['author'] != null ? map['author'] as String : null,
       title: map['title'] as String,
-      description: map['description'] as String,
+      description: map['description'] != null ? map['description'] as String? : null,
       url: map['url'] as String,
       urlToImage: map['urlToImage'] != null ? map['urlToImage'] as String : null,
       publishedAt: DateTime.parse(map['publishedAt'] as String),

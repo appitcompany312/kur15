@@ -25,7 +25,7 @@ class ArticleDetailPage extends StatelessWidget {
           if (article.urlToImage != null) Image.network(article.urlToImage!),
           const SizedBox(height: 10),
           Text(
-            article.description,
+            article.description ?? '',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           const SizedBox(height: 10),
