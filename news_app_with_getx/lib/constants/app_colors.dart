@@ -1,0 +1,1 @@
+// News appte koldonuluuchu colorlor bul jakka jazylat
