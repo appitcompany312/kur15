@@ -4,9 +4,8 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart';
+import 'package:news_app_with_getx/models/country.dart';
 import 'package:news_app_with_getx/models/news_data.dart';
-
-const apiLink = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=5ea6b14fb6084c9dae2f9a00f75cb044';
 
 class NewsController extends GetxController {
   NewsController(this.http);
@@ -17,11 +16,12 @@ class NewsController extends GetxController {
   RxString data = ''.obs;
   RxString error = ''.obs;
   Rx<NewsData?> newsData = Rx<NewsData?>(null);
+  Rx<Country> country = countries[0].obs;
 
   Future<void> getNews() async {
     try {
       isLoading.value = true;
-      final uri = Uri.parse(apiLink);
+      final uri = Uri.parse(getUrl());
       final response = await http.get(uri);
       print(response);
       isLoading.value = false;
@@ -38,5 +38,13 @@ class NewsController extends GetxController {
       error.value = 'Something went wrong';
       print(error.value);
     }
+  }
+
+  void changeContry(Country value) {
+    country.value = value;
+  }
+
+  String getUrl() {
+    return 'https://newsapi.org/v2/top-headlines?country=${country.value.code}&apiKey=5ea6b14fb6084c9dae2f9a00f75cb044';
   }
 }

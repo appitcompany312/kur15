@@ -19,7 +19,7 @@ class Article {
   final String url;
   final String? urlToImage;
   final DateTime publishedAt;
-  final String content;
+  final String? content;
 
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
@@ -43,7 +43,7 @@ class Article {
       url: map['url'] as String,
       urlToImage: map['urlToImage'] != null ? map['urlToImage'] as String : null,
       publishedAt: DateTime.parse(map['publishedAt'] as String),
-      content: map['content'] as String,
+      content: map['content'] != null ? map['content'] as String : null,
     );
   }
 }
