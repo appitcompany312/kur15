@@ -20,6 +20,7 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
 
   Future<void> _onGetNews(GetNewsEvent event, Emitter<NewsState> emit) async {
     emit(NewsLoading());
+    await Future.delayed(const Duration(seconds: 1));
     try {
       final response = await client.get(Uri.parse(url));
       if (response.statusCode == 200) {
