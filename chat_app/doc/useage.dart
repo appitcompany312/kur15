@@ -1,9 +1,10 @@
 /*
-1) Flutter (mobile)
-2) Assets (icons, images)
-3) Animated_text_kit (animation)
-4) Bloc, flutter_bloc  (state management)
-5) Firebase (cloud service, backend)
-6) Firebase Auth (login and register)
-7) Firebase Firestore (database)
+- Flutter (mobile)
+- Assets (icons, images)
+- Flutter svg (icon format svg)
+- Animated_text_kit (animation)
+- Bloc, flutter_bloc  (state management)
+- Firebase (cloud service, backend)
+- Firebase Auth (login and register)
+- Firebase Firestore (database)
 */
