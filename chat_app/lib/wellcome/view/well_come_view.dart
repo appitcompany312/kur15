@@ -1,4 +1,6 @@
 import 'package:chat_app/components/components.dart';
+import 'package:chat_app/login/login.dart';
+import 'package:chat_app/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -27,12 +29,26 @@ class WellComeView extends StatelessWidget {
             const SizedBox(height: 20),
             CustomElevatedButton(
               text: 'Login',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const LoginView(),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 20),
             CustomElevatedButton(
               text: 'Register',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const RegisterView(),
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -40,4 +56,3 @@ class WellComeView extends StatelessWidget {
     );
   }
 }
-
