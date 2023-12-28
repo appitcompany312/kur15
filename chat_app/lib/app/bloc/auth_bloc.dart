@@ -5,19 +5,53 @@ import 'package:chat_app/models/user_model.dart';
 // ignore: library_prefixes
 import 'package:firebase_auth/firebase_auth.dart' as authPkg;
 import 'package:meta/meta.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
 
+const _emailKey = 'email-key';
+const _passwordKey = 'password-key';
+
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc({required this.auth}) : super(UnauthenticatedState()) {
+  AuthBloc({
+    required this.auth,
+    required this.storage,
+  }) : super(UnauthenticatedState()) {
     on<AuthEvent>((event, emit) {});
     on<AuthLoginEvent>(_login);
     on<AuthRegisterEvent>(_register);
     on<AuthLogoutEvent>(_logout);
+    on<AuthInitialEvent>(_init);
   }
 
   final authPkg.FirebaseAuth auth;
+  final SharedPreferences storage;
+
+  Future<void> _init(AuthInitialEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoadingState());
+    try {
+      final email = storage.getString(_emailKey);
+      final password = storage.getString(_passwordKey);
+
+      if (email != null && password != null) {
+        final fUser = await auth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+
+        log('$fUser');
+
+        final appUser = User(email: email, password: password);
+
+        emit(AuthenticatedState(appUser));
+      } else {
+        emit(UnauthenticatedState());
+      }
+    } catch (e) {
+      emit(UnauthenticatedState());
+    }
+  }
 
   Future<void> _login(AuthLoginEvent event, Emitter<AuthState> emit) async {
     try {
@@ -31,6 +65,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       log('$fUser');
 
       final appUser = User(email: event.email, password: event.email);
+
+      await storage.setString(_emailKey, event.email);
+      await storage.setString(_passwordKey, event.password);
 
       emit(AuthenticatedState(appUser));
     } catch (e) {
@@ -48,9 +85,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         password: event.password,
       );
 
+      log('firebase user uid ${fUser.user?.uid}');
+
       log('$fUser');
 
       final appUser = User(email: event.email, password: event.email);
+
+      await storage.setString(_emailKey, event.email);
+      await storage.setString(_passwordKey, event.password);
 
       emit(AuthenticatedState(appUser));
     } catch (e) {
@@ -64,6 +106,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthLoadingState());
       await Future.delayed(const Duration(seconds: 1));
       await auth.signOut();
+
+      await storage.remove(_emailKey);
+      await storage.remove(_passwordKey);
+
       emit(UnauthenticatedState());
     } catch (e) {
       log('$e');
