@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:chat_app/models/user_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 // ignore: library_prefixes
 import 'package:firebase_auth/firebase_auth.dart' as authPkg;
 import 'package:meta/meta.dart';
@@ -17,6 +18,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc({
     required this.auth,
     required this.storage,
+    required this.db,
   }) : super(UnauthenticatedState()) {
     on<AuthEvent>((event, emit) {});
     on<AuthLoginEvent>(_login);
@@ -27,6 +29,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final authPkg.FirebaseAuth auth;
   final SharedPreferences storage;
+  final FirebaseFirestore db;
 
   Future<void> _init(AuthInitialEvent event, Emitter<AuthState> emit) async {
     emit(AuthLoadingState());
@@ -42,7 +45,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
         log('$fUser');
 
-        final appUser = User(email: email, password: password);
+        final appUser = User(
+          email: email,
+          password: password,
+          uid: fUser.user?.uid ?? '',
+        );
 
         emit(AuthenticatedState(appUser));
       } else {
@@ -64,7 +71,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       log('$fUser');
 
-      final appUser = User(email: event.email, password: event.email);
+      final appUser = User(
+        email: event.email,
+        password: event.password,
+        uid: fUser.user?.uid ?? '',
+      );
 
       await storage.setString(_emailKey, event.email);
       await storage.setString(_passwordKey, event.password);
@@ -89,7 +100,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       log('$fUser');
 
-      final appUser = User(email: event.email, password: event.email);
+      final appUser = User(
+        email: event.email,
+        password: event.password,
+        uid: fUser.user?.uid ?? '',
+      );
+
+      await db.collection("users").doc(appUser.uid).set(appUser.toJson());
 
       await storage.setString(_emailKey, event.email);
       await storage.setString(_passwordKey, event.password);
