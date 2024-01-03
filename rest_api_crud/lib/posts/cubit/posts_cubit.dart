@@ -49,7 +49,7 @@ class PostsCubit extends Cubit<PostsState> {
         headers: {'Content-type': 'application/json; charset=UTF-8'},
         body: jsonEncode({'title': title, 'body': body, 'userId': 1}),
       );
-      
+
       if (response.statusCode == 201) {
         return (201, 'Post created successfully');
       } else {
@@ -65,6 +65,31 @@ class PostsCubit extends Cubit<PostsState> {
   koldonuuchudan post idsine karap jangy title jana descriptionyn alyp ondoibuz
   //https://jsonplaceholder.typicode.com/posts/1
   */
+  Future<(int, String)> updatePost({
+    required int postId,
+    required String title,
+    required String body,
+  }) async {
+    try {
+      final res = await client.put(
+        Uri.parse('$url/$postId'),
+        headers: {'Content-type': 'application/json; charset=UTF-8'},
+        body: jsonEncode({
+          'id': postId,
+          'title': title,
+          'body': body,
+          'userId': 1,
+        }),
+      );
+      if (res.statusCode == 200 || res.statusCode == 201) {
+        return (200, 'Post updated successfully');
+      } else {
+        return (0, res.body);
+      }
+    } catch (e) {
+      return (0, e.toString());
+    }
+  }
 
   // Patch (Update mini) post
   /*
@@ -77,4 +102,16 @@ class PostsCubit extends Cubit<PostsState> {
   koldonuuchudan post idsine karap any beckten churobuz
   // https://jsonplaceholder.typicode.com/posts/1
   */
+  Future<(int, String)> deletePost({required int postId}) async {
+    try {
+      final res = await client.delete(Uri.parse('$url/$postId'));
+      if (res.statusCode == 200) {
+        return (200, 'Post deleted successfully');
+      } else {
+        return (0, res.body);
+      }
+    } catch (e) {
+      return (0, e.toString());
+    }
+  }
 }
