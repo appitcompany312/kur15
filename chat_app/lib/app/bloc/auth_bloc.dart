@@ -43,7 +43,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           password: password,
         );
 
-        log('$fUser');
+        // log('$fUser');
 
         final appUser = User(
           email: email,
