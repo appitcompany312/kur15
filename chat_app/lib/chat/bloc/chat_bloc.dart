@@ -43,6 +43,7 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
   }
 
   String get getChatId {
+    if (secondUser.isGroup) return secondUser.uid;
     final idList = <String>[currentUser.uid, secondUser.uid];
     idList.sort();
     return idList.join('-');
